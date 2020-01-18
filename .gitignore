@@ -2,3 +2,5 @@
 .vscode
 .python-version
 static
+__pycache__
+*.pyc
