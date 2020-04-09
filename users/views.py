@@ -30,30 +30,6 @@ class SignUpView(views.APIView):
             status=status.HTTP_400_BAD_REQUEST)
 
 
-class LoginView(views.APIView):
-    """
-    POST api/login/
-    """
-    authentication_classes = ()
-    permission_classes = (permissions.AllowAny,)
-
-    def post(self, request, *args, **kwargs):
-        email = request.data.get("email", "")
-        password = request.data.get("password", "")
-        user = authenticate(request, email=email, password=password)
-        if user:
-            login(request, user)
-            token = jwt.encode({
-                'email': user.email,
-                'exp': timezone.now() + timezone.timedelta(days=3)
-            }, settings.SECRET_KEY)
-            return Response({'token': token})
-        return Response(data={
-            "message":
-            "The provided credentials are not valid"
-        }, status=status.HTTP_400_BAD_REQUEST)
-
-
 class UserList(views.APIView):
 
     # permission_classes = (permissions.IsAdminUser,)
