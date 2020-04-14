@@ -4,7 +4,7 @@ build:
 up:
 	docker-compose up && docker-compose rm -fsv
 down:
-	docker-compose down
+	docker-compose down --volumes
 migrations:
 	docker-compose run web python3 manage.py makemigrations
 migrate:
