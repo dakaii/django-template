@@ -6,7 +6,7 @@ up:
 down:
 	docker-compose down --volumes
 migrations:
-	docker-compose run web python3 manage.py makemigrations
+	python manage.py makemigrations
 migrate:
 	docker-compose run web python3 manage.py migrate
 superuser:
