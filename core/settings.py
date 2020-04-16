@@ -29,7 +29,7 @@ DEBUG = os.environ.get("DEBUG", default=0)
 # SECURITY WARNING set appropriate allowed hosts with the config file.
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", default='127.0.0.1').split(' ')
 
-AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users.AccountOwner'
 # Application definition
 
 INSTALLED_APPS = [
