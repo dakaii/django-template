@@ -11,6 +11,5 @@ migrate:
 	docker-compose run web python3 manage.py migrate
 superuser:
 	docker-compose run web python3 manage.py createsuperuser
-
-
-
+test:
+	docker-compose run web pytest --ds=core.settings --reuse-db -s
