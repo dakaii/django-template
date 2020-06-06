@@ -14,4 +14,5 @@ class AccountOwnerSerializer(serializers.ModelSerializer):
             'is_active', 'date_joined')
 
     def create(self, validated_data):
+        # TODO do i really need to do this?
         return AccountOwner.objects.create_user(**validated_data)
